@@ -290,7 +290,7 @@ def main():
     model = mujoco.MjModel.from_xml_string(XML)
     data = mujoco.MjData(model)
     renderer = mujoco.Renderer(model, height=ALTO, width=ANCHO)
-    video = cv2.VideoWriter("demo__pick_and_place.mp4", cv2.VideoWriter_fourcc(*"mp4v"),
+    video = cv2.VideoWriter("src/demo__pick_and_place.mp4", cv2.VideoWriter_fourcc(*"mp4v"),
                             FPS, (ANCHO, ALTO))
     robot = Robot(model, data, renderer, video)
 

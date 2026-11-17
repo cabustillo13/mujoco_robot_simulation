@@ -143,7 +143,7 @@ def main():
         print(f"  {k:16s} {np.round(v, 3)}")
 
     # --- Paso 2: para cada objeto, IK + movimiento ---
-    video = cv2.VideoWriter("demo__cinematica_inversa.mp4", cv2.VideoWriter_fourcc(*"mp4v"),
+    video = cv2.VideoWriter("src/demo__cinematica_inversa.mp4", cv2.VideoWriter_fourcc(*"mp4v"),
                             FPS, (ANCHO, ALTO))
     ejec = Ejecutor(model, data, renderer, video)
     sid = model.site("efector").id

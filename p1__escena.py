@@ -137,13 +137,13 @@ def main():
     # -----------------------------------------------------------------------
     # 5) Guardar imágenes (OpenCV usa BGR, por eso convertimos)
     # -----------------------------------------------------------------------
-    cv2.imwrite("rgb.png", cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR))
+    cv2.imwrite("src/rgb.png", cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR))
 
     # Para visualizar: recortamos a 3 m (el fondo/cielo da ~75 m y aplasta el contraste)
     d = np.clip(depth, 0, 3.0)
     d8 = (255 * d / 3.0).astype(np.uint8)
-    cv2.imwrite("depth.png", d8)
-    np.save("depth.npy", depth)  # valores reales en metros, para usar después
+    cv2.imwrite("src/depth.png", d8)
+    np.save("src/depth.npy", depth)  # valores reales en metros, para usar después
     print("Guardados: rgb.png, depth.png, depth.npy")
 
     # -----------------------------------------------------------------------

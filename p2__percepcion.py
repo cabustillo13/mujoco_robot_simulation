@@ -136,7 +136,7 @@ def main():
         cv2.putText(anotada, nombre, (int(u) + 8, int(v) - 8),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1, cv2.LINE_AA)
 
-    cv2.imwrite("detecciones.png", anotada)
+    cv2.imwrite("src/detecciones.png", anotada)
     print("\nGuardado: detecciones.png")
 
 
