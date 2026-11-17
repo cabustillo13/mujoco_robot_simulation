@@ -43,17 +43,19 @@ XML = """
     </body>
 
     <!-- Brazo de 4 articulaciones, montado en el borde de la mesa.
-         contype/conaffinity="0" = sin colisiones (por ahora, para simplificar) -->
-    <body name="base" pos="0.3 0 0.43">
+         contype/conaffinity="0" = sin colisiones (por ahora, para simplificar).
+         gravcomp="1" = compensación de gravedad: los actuadores de posición
+         no se "caen" por el peso de los eslabones. -->
+    <body name="base" pos="0.3 0 0.43" gravcomp="1">
       <geom type="cylinder" size="0.05 0.03" material="brazo" contype="0" conaffinity="0"/>
       <joint name="hombro_yaw" type="hinge" axis="0 0 1" range="-3.1 3.1" damping="2"/>
-      <body name="link1" pos="0 0 0.0">
+      <body name="link1" pos="0 0 0.0" gravcomp="1">
         <joint name="hombro_pitch" type="hinge" axis="0 1 0" range="-1.5 1.5" damping="2"/>
         <geom type="capsule" fromto="0 0 0 0 0 0.25" size="0.025" material="brazo" contype="0" conaffinity="0"/>
-        <body name="link2" pos="0 0 0.25">
+        <body name="link2" pos="0 0 0.25" gravcomp="1">
           <joint name="codo" type="hinge" axis="0 1 0" range="-2.5 2.5" damping="1"/>
           <geom type="capsule" fromto="0 0 0 0 0 0.25" size="0.02" material="brazo" contype="0" conaffinity="0"/>
-          <body name="link3" pos="0 0 0.25">
+          <body name="link3" pos="0 0 0.25" gravcomp="1">
             <joint name="muneca" type="hinge" axis="0 1 0" range="-2.5 2.5" damping="0.5"/>
             <geom type="capsule" fromto="0 0 0 0 0 0.10" size="0.015" material="brazo" contype="0" conaffinity="0"/>
             <site name="efector" pos="0 0 0.10" size="0.01" rgba="1 0 0 1"/>
